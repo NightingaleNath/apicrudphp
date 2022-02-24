@@ -12,13 +12,17 @@ $itemCount = $records->num_rows;
 
 if($itemCount > 0){
 $employeeArr = array();
+ $itemCountArr = array();
 $employeeArr["body"] = array();
-$employeeArr["itemCount"] = $itemCount;
+//$employeeArr["itemCount"] = $itemCount;
+ $itemCountArr['total_count'] = $itemCount; 
 while ($row = $records->fetch_assoc())
 {
 array_push($employeeArr["body"], $row);
 }
-echo json_encode($employeeArr);
+$finalArray = array_merge($employeeArr,$itemCountArr);
+//echo json_encode($employeeArr);
+ echo json_encode($finalArray);
 }
 else{
 http_response_code(404);
