@@ -15,7 +15,7 @@ $employeeArr = array();
  $itemCountArr = array();
 $employeeArr["body"] = array();
 //$employeeArr["itemCount"] = $itemCount;
- $itemCountArr['total_count'] = $itemCount; 
+ $itemCountArr['itemCount'] = $itemCount; 
 while ($row = $records->fetch_assoc())
 {
 array_push($employeeArr["body"], $row);
